@@ -19,7 +19,9 @@ We can also use ' ng build --prod --configuration="production" ', or
 
 
 ' ng build --prod --configuration="staging" ' to use environment files respective to environments.
+
 Angular.json entry as below:
+
 "staging" : {
               "fileReplacements": [
                 {
@@ -32,6 +34,7 @@ Angular.json entry as below:
 
 ## urls:
 http://localhost:4200/user-orderstatus
+
 http://localhost:4200/admin-orderstatus
 
 ## Docker Commands
