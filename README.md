@@ -18,18 +18,25 @@ ng build --prod
 We can also use ' ng build --prod --configuration="production" ', or 
 
 
-' ng build --prod --configuration="staging" ' to use environment files respective to environments.
+' ng build --prod --configuration="staging" ' to use staging environment file, and respective angular.json entry below.
 
-Angular.json entry as below:
+Example Angular.json entry as below for a staging environment file.
 
 "staging" : {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.stg.ts"
-                }
-              ]
-            }
+              
+			  "fileReplacements": [
+               
+			   {
+                 
+				 "replace": "src/environments/environment.ts",
+                  
+				  "with": "src/environments/environment.stg.ts"
+                
+				}
+              
+			  ]
+           
+		   }
 
 
 ## urls:
