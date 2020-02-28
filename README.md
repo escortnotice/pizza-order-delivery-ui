@@ -20,7 +20,7 @@ We can also use ' ng build --prod --configuration="production" ', or
 
 ' ng build --prod --configuration="staging" ' to use staging environment file, and respective angular.json entry below.
 
-Example Angular.json entry as below for a staging environment file.
+> Example Angular.json entry as below for a staging environment file.
 
 	"staging": {
               
