@@ -1,0 +1,17 @@
+<strong style="margin-left: 252px;">Order Summary</strong>
+
+<p>
+    Your Order has been placed successfully with order-id <strong>{{orderid}}</strong>
+</p>
+<p>
+    Click on the order id  <a [routerLink]="['/user-orderstatus',orderid]">{{orderid}}</a>  to know the status of your order.
+</p>
+<div style="margin-top: 20px;margin-bottom: 40px;">
+    <table class="table table-bordered" style="width:60%;margin: 0 auto !important;border-radius: 5px;">
+        <tbody>
+            <tr>Username: {{ order.user.username }}</tr>
+            <tr>Email: {{ order.user.email }}</tr>
+            <tr>Address: {{ order.user.address }}</tr>
+        </tbody>
+    </table>
+</div>

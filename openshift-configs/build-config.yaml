@@ -1,0 +1,37 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata: 
+  name: pizza-order-delivery-ui
+spec: 
+  output: 
+    to: 
+      kind: ImageStreamTag
+      name: "pizza-order-delivery-ui:latest"
+  runPolicy: Serial
+  source: 
+    git: 
+      ref: master
+      uri: "https://github.ibm.com/shuroych/pizza-order-delivery-ui.git"
+    sourceSecret: 
+      name: github-secret
+    type: Git
+  strategy: 
+    dockerStrategy: ~
+    type: Docker
+  triggers: 
+    - 
+      github: 
+        secret: OSn21__9zXSDzhd82-T9
+      type: GitHub
+    - 
+      generic: 
+        secret: kA2ETpXZ1AWmBm65BAQs
+      type: Generic
+    - 
+      type: ConfigChange
+    - 
+      imageChange: 
+        lastTriggeredImageID: "nginx@sha256:20b62c392073deac500292d6b37c851bb4d00986edb3d73d08c0f0e65019ce6c"
+      type: ImageChange
+status: 
+  lastVersion: 1

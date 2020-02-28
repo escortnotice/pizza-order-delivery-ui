@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>The Pizza Lounge</title>
+</head>
+
+<body>
+    
+    <!-- <app-top-header></app-top-header> -->
+    <header>
+        <div class="navbar navbar-dark bg-dark shadow-sm fixed-top">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img src="../../assets/img/icon.png" class="rounded" alt="Cinque Terre"
+                        style="width:45px;height:45px;">
+                    <strong style="padding-left: 10px;">The Pizza Lounge</strong>
+                </a>
+                <a [routerLink]="['/cart']">
+                    <img src="../../assets/img/shopping-cart.png" class="rounded" alt="Cinque Terre"
+                        style="width:50px;height:50px;margin-top: 7px;margin-right: -5px;" />
+                        <strong *ngIf="cartItemCount>0" style="color:#ff0597;float: unset;margin-left: -23px;">{{cartItemCount}}</strong>
+                </a>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-white shadow-sm fixed-top"
+            style="height: 50px; margin-top: 72px; background-color: white;">
+            <ul class="nav nav-pills">
+                <li>
+                    <a class="nav-item nav-link" id="pizza-tab" href="#home" role="tab" aria-controls="pizza"
+                        aria-selected="true" style="margin-left: 60px;">HOME</a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link" id="beverages-tab" href="#pizza" role="tab"
+                        aria-controls="beverages" aria-selected="false">PIZZA</a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link" id="deal-tab" href="#beverages" role="tab"
+                        aria-controls="deal" aria-selected="false">BEVERAGES</a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link active" style="margin-left: 768px;" id="deal-tab" [routerLink]="['/user-orderstatus']" role="tab"
+                        aria-controls="deal" aria-selected="false">Track Order</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main role="main" id="home">
+
+        <section class="jumbotron text-center">
+            <div class="container" style="margin-top: 100px;">
+                <h1>The Pizza Lounge</h1>
+                <p class="lead text-muted">Groove Here with Food and Music</p>
+            </div>
+        </section>
+
+        <!-- Pizza and Beverage Starts -->
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" *ngFor="let product of products">
+                        <div class="card mb-4 shadow-sm" id="pizza">
+                            <span *ngIf="product.itemtype === 'Pizza'" id="pizza"></span>
+                            <span *ngIf="product.itemtype === 'Beverages'" id="beverages"></span>
+                            <img [src]="product.img_src" class="rounded img-thumbnail" alt="Cinque Terre">
+                            <div class="card-body">
+                                <p class="card-text">{{product.name}}
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
+                                        *ngIf="product.category==='non-veg'"
+                                        style="width: 20px;height:20px; padding-left:4px">
+                                        <path fill="none" stroke="#92282a" stroke-width="2" d="M1 1h62v62H1z" />
+                                        <circle cx="32" cy="32" r="20.7" fill="#92282a" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
+                                        *ngIf="product.category==='veg'"
+                                        style="width: 20px;height:20px; padding-left:4px">
+                                        <path d="M1 1h62v62H1V1z" fill="none" stroke="#00923f" stroke-width="2" />
+                                        <circle cx="32" cy="32" r="20.7" fill="#00923f" /></svg>
+                                </p>
+                                <p class="text-muted">{{product.description}}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addToCart(product)">Order</button>
+                                    </div>
+                                    <small class="text-muted">Rs {{product.price}}.00</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pizza and Beverage Ends -->
+
+    </main>
+
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">Back to top</a>
+            </p>
+            <p>Give feedback <a href="https://feedback.com/">here</a> or tweet us. We are on  <a
+                    href="https://twitter.com">Twitter</a>.</p>
+            <p><small>The Pizza Lounge &copy; 2020 All rights reserved. License Number: 00000000000</small></p>
+        </div>
+    </footer>
+</body>
+
+</html>

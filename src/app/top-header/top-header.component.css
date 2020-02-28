@@ -1,0 +1,20 @@
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(188, 126, 126, 0.81) !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+color: #fcfcfc;
+background-color:#e72c2cd9;
+}
+
+a {
+    color: #988b8bed;
+}
+
+a:hover {
+    color: tomato;
+}
+
+.bg-dark {
+    background-color:#de2424 !important;
+}

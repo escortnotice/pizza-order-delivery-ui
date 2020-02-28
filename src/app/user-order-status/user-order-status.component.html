@@ -1,0 +1,16 @@
+<div class="btn-group-vertical" style="margin-left: 500px;margin-top: 100px;">
+    orderId:<input type=text placeholder="order-id" [(ngModel)]= "orderId">
+    <button type="button" (click)="fetchOrder()" style="margin-bottom: 50px;">Get Order Details</button>
+
+    <button *ngIf="orderObj.order_received===true"    type="button" class="btn btn-secondary btn-lg" style="margin-bottom: 40px; background-color: green;">Order Received</button>
+    <button  *ngIf="!orderObj.order_received" type="button" class="btn btn-secondary btn-lg" style="margin-bottom: 40px; background-color: grey;">Order Received</button>
+    
+    <button *ngIf="orderObj.order_accepted===true"    type="button" class="btn btn-secondary btn-lg" style="margin-bottom: 40px; background-color: green;">Order Accepted</button>
+    <button  *ngIf="!orderObj.order_accepted" type="button" class="btn btn-secondary btn-lg" style="margin-bottom: 40px; background-color: grey;">Order Accepted</button>
+    
+    <button *ngIf="orderObj.order_readyforpickup===true"  type="button" class="btn btn-secondary btn-lg" style="margin-bottom: 40px;background-color: green;">Order Ready for Pickup</button>
+    <button *ngIf="!orderObj.order_readyforpickup"  type="button" class="btn btn-secondary btn-lg" style="margin-bottom: 40px;background-color: grey;">Order Ready for Pickup</button>
+    
+    <button *ngIf="orderObj.order_outfordelivery===true" type="button" class="btn btn-secondary btn-lg" style="margin-bottom: 40px;background-color: green;">Order Out For Delivery</button>
+    <button *ngIf="!orderObj.order_outfordelivery" type="button" class="btn btn-secondary btn-lg" style="margin-bottom: 40px;background-color: grey;">Order Out For Delivery</button>
+</div>

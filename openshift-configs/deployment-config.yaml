@@ -1,0 +1,33 @@
+kind: DeploymentConfig
+apiVersion: apps.openshift.io/v1
+metadata:
+  name: pizza-order-delivery-ui
+spec:
+  strategy:
+    type: Rolling
+  triggers:
+    - type: ConfigChange
+    - type: ImageChange
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - pizza-order-delivery-ui
+        from:
+          kind: ImageStreamTag
+          name: 'pizza-order-delivery-ui:latest'
+  replicas: 1
+  selector:
+    app: pizza-order-delivery-ui
+    deploymentconfig: pizza-order-delivery-ui
+  template:
+    metadata:
+      labels:
+        app: pizza-order-delivery-ui
+        deploymentconfig: pizza-order-delivery-ui
+    spec:
+      containers:
+        - name: pizza-order-delivery-ui
+          image: 'pizza-order-delivery-ui:latest'
+          ports:
+            - containerPort: 8081
+              protocol: TCP

@@ -1,0 +1,78 @@
+.jumbotron {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+    background-color: #fff;
+  }
+  @media (min-width: 768px) {
+    .jumbotron {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+  
+  .jumbotron p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .jumbotron h1 {
+    font-weight: 300;
+  }
+  
+  .jumbotron .container {
+    max-width: 40rem;
+  }
+  
+  footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  footer p {
+    margin-bottom: .25rem;
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.btn-outline-secondary:hover {
+    background-color:tomato;
+}
+
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+ }
+
+ .shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(188, 126, 126, 0.81) !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+color: #fcfcfc;
+background-color:#e72c2cd9;
+}
+
+a {
+  color: #988b8bed;
+}
+
+a:hover {
+  color: tomato;
+}
+
+.bg-dark {
+  background-color:#de2424 !important;
+}

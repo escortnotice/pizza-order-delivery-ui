@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>The Pizza Lounge</title>
+</head>
+
+<body>
+    
+    <!-- <app-top-header></app-top-header> -->
+    <strong style="margin-left: 252px;">Shopping Cart</strong>
+
+    <div style="margin-top: 20px;margin-bottom: 40px;">
+    <table class="table table-striped table-bordered" style="width:60%;margin: 0 auto !important;border-radius: 5px;">
+        <tbody>
+            <tr *ngFor="let item of items">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.price }}</td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+
+<div style="width:60%;margin: 0 auto !important">
+       <div style="margin-bottom: 50px;margin-top: 10px;">
+            <span style="float: left;padding-left: 20px;">Name:</span>
+            <input type="text"  [(ngModel)]= "name" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="addon-wrapping" style="width: 50%; margin-left: 100px;" ngModel>
+        </div>
+        <div style="margin-bottom: 50px;margin-top: 10px;">
+            <span style="float: left;padding-left: 20px;">Address:</span>
+            <input type="text"  [(ngModel)]= "address" class="form-control" placeholder="Address" aria-label="Username" aria-describedby="addon-wrapping" style="width: 50%; margin-left: 100px;" ngModel>
+        </div>
+        <div>
+            <span style="float: left;padding-left: 20px;">Email:</span>
+            <input type="text"  [(ngModel)]= "email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping" style="width: 50%; margin-left: 100px;" ngModel>
+        </div>
+        <button type="button"  class="btn btn-info" style="margin-top:10px;margin-left: 200px" (click)="finalizeOrder()">Confirm Order</button>      
+</div>
+</body>
+
+</html>

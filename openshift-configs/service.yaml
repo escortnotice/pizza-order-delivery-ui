@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: pizza-order-delivery-ui
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8081
+      targetPort: 8081
+  selector:
+    app: pizza-order-delivery-ui
+  type: ClusterIP
