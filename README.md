@@ -1,6 +1,9 @@
+## Description
+Angular v8.x.x UI to integrate with fooditemsorderdeliveryapi backend and deploy on Openshift
+
 ## Backend for this UI
 
-https://github.ibm.com/shuroych/fooditemsorderdeliveryapi.git
+https://github.com/escortnotice/fooditemsorderdeliveryapi
 
 ## Development server
 
