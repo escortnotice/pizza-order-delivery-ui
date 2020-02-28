@@ -22,7 +22,7 @@ We can also use ' ng build --prod --configuration="production" ', or
 
 Example Angular.json entry as below for a staging environment file.
 
-"staging" : {
+	"staging": {
               
 			  "fileReplacements": [
                
